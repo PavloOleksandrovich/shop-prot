@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "./src/**/*.js",
+        "../common/**/*.js",
+        "./.env",
+        "./*.env"
+    ],
+    "ext": "js,env"
+}
