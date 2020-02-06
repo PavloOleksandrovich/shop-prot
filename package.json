@@ -1,0 +1,18 @@
+{
+  "name": "shop-prot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pavlo Makukha <7734.why.not@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "setup": "yarn && yarn setup:api && yarn setup:web",
+    "setup:api": "yarn --cwd api",
+    "setup:web": "yarn --cwd web",
+    "dev": "concurrently \"yarn dev:api\" \"yarn dev:web\" --kill-others",
+    "dev:api": "yarn --cwd api dev",
+    "dev:web": "yarn --cwd web start"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
