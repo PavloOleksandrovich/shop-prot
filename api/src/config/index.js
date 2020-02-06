@@ -4,7 +4,7 @@ const ENV = loadEnv();
 module.exports = {
     SETTINGS: {
         ENV,
-        PRODUCTION: process.env.REACT_APP_PRODUCTION
+        PRODUCTION: JSON.parse(process.env.REACT_APP_PRODUCTION) || false
     },
-    SERVER: require('./server')
+    API: require('./server')
 };
