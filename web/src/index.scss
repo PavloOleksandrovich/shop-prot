@@ -1,0 +1,35 @@
+@import "./style/vars";
+
+/* ===========================
+	    Reset
+   =========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===========================
+        Typography
+   =========================== */
+body {
+    font-family: hind, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: .3s color;
+
+    &:hover {
+        color: $accent-color;
+    }
+}
