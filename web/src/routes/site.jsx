@@ -1,15 +1,15 @@
-import { Home, About } from '../pages';
+import { lazy } from 'react';
 
 export default {
     home: {
         path: '/',
-        component: Home,
+        component: lazy(() => import('../pages/site/Home/Home')),
         exact: true
     },
 
     about: {
         path: '/about',
-        component: About,
+        component: lazy(() => import('../pages/site/About/About')),
         exact: true
     }
 }

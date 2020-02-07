@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -20,13 +20,16 @@ const client = new ApolloClient({
 function App() {
 	return (
 		<ApolloProvider client={client}>
-			<Router>
-				<Switch>
-					{Object.values(routes).map( (route, index) => (
-						<Route {...route} key={index} />
-					) )}
-				</Switch>
-			</Router>
+			{/* TODO loading component */}
+			<Suspense fallback={<h1>Loading</h1>}>
+				<Router>
+					<Switch>
+						{Object.values(routes).map( (route, index) => (
+							<Route {...route} key={index} />
+						) )}
+					</Switch>
+				</Router>
+			</Suspense>
 		</ApolloProvider>
 	);
 }
