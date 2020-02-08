@@ -1,0 +1,39 @@
+@import "../../../style/vars";
+
+$categories-button-padding: 15px;
+$nav-gap: 20px;
+
+.navigation {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $primary-color;
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+
+    .categoryHeader {
+        width: 270px;
+        padding: $categories-button-padding;
+        font-weight: 700;
+        background-color: $accent-color;
+        cursor: pointer;
+        transition: .3s color;
+
+        > i {
+            position: relative;
+            bottom: 2px;
+        }
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    ul {
+        li {
+            margin-right: $nav-gap;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
