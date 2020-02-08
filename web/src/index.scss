@@ -1,18 +1,9 @@
+@import "./style/bootstrap/bootstrap.scss";
 @import "./style/vars";
 
 /* ===========================
 	    Reset
    =========================== */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}
-
 ul {
     list-style: none;
 }
@@ -25,7 +16,6 @@ body {
 }
 
 a {
-    text-decoration: none;
     color: #fff;
     transition: .3s color;
 
