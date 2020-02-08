@@ -1,39 +1,40 @@
 @import "../../../style/vars";
 
-$categories-button-padding: 15px;
-$nav-gap: 20px;
-
 .navigation {
     text-transform: uppercase;
     color: #fff;
     background-color: $primary-color;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 
-    .categoryHeader {
+    .categoriesWrapper {
+        position: relative;
         width: 270px;
-        padding: $categories-button-padding;
-        font-weight: 700;
-        background-color: $accent-color;
-        cursor: pointer;
-        transition: .3s color;
 
-        > i {
+        .categoriesButton {
             position: relative;
-            bottom: 1px;
-        }
+            width: 100%;
+            padding: 15px;
+            font-weight: 700;
+            background-color: $accent-color;
+            cursor: pointer;
+            transition: .3s color;
 
-        &:hover {
-            color: $primary-color;
+            > i {
+                position: relative;
+                bottom: 1px;
+            }
+
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 
-    ul {
-        li {
-            margin-right: $nav-gap;
+    .navbar {
+        padding-left: 40px;
 
-            &:last-child {
-                margin-right: 0;
-            }
+        > li + li {
+            margin-left: 20px;
         }
     }
 }
