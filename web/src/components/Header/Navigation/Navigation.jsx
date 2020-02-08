@@ -4,8 +4,6 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import style from './Navigation.module.scss';
 
-import routes from '../../../routes';
-
 // TODO separate
 const CATEGORIES_QUERY = gql`
   {
@@ -44,11 +42,12 @@ function Navigation() {
                 </ul> */}
 
                 <ul className="d-flex align-items-center mb-0">
-                    {Object.keys(routes).map( (route, index) => (
-                        <li key={index}>
-                            <Link to={routes[route].path}>{ route }</Link>
-                        </li>
-                    ) )}
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/about">About</Link>
+                    </li>
                 </ul>
             </div>
         </div>
