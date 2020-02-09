@@ -4,7 +4,7 @@ const { root } = require('./helpers');
 
 const loadEnv = () => {
     const { NODE_ENV } = process.env;
-
+    
     const env =  NODE_ENV
         ? `${NODE_ENV}.env`
         : '.env';

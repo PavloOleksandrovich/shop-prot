@@ -3,7 +3,8 @@
         "./src/**/*.js",
         "../common/**/*.js",
         "../.env",
-        "../*.env"
+        "../*.env",
+        "./package.json"
     ],
     "ext": "js,env"
 }

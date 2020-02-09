@@ -6,5 +6,6 @@ module.exports = {
         ENV,
         PRODUCTION: JSON.parse(process.env.PRODUCTION) || false
     },
-    API: require('./server')
+    API: require('./server'),
+    DATABASE: require('./database')
 };

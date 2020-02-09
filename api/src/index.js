@@ -3,6 +3,7 @@ const graphqlHTTP = require('express-graphql');
 const cors = require('cors');
 
 const config = require('./config');
+const { connectMongo } = require('./utils');
 const schema = require('./schemas');
 
 const server = express();
@@ -14,7 +15,9 @@ server.use(config.API.GRAPHQL_ENDPOINT, graphqlHTTP({
     graphiql: !config.SETTINGS.PRODUCTION
 }));
 
-server.listen(
-    config.API.PORT,
-    () => console.log(`Server running. Port [${config.API.PORT}], env [${config.SETTINGS.ENV}]`)
-);
+connectMongo(config, () => {
+    server.listen(
+        config.API.PORT,
+        () => console.log(`Server running.Port [${config.API.PORT}], env [${config.SETTINGS.ENV}]`)
+    );
+});
