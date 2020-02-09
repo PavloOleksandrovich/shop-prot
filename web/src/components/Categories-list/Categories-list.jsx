@@ -23,8 +23,8 @@ function CategoriesList({isOpenable, isOpened}) {
     
     if (isOpenable) {
         className = isOpened 
-            ? className + ` ${style.isOpened} ${style.showOnClick}`
-            : className + ` ${style.isOpened} ${style.showOnClick} ${style.open}`;
+            ? className + ` ${style.isOpened} ${style.showOnClick} ${style.open}`
+            : className + ` ${style.isOpened} ${style.showOnClick}`;
     }
 
     return (
