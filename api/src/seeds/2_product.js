@@ -10,12 +10,9 @@ module.exports = async () => {
         const category = await Category.findOne({name});
 
         await Bluebird.each(products[name], async product => {
-            product.category = category
-            const dbProduct = await Product.create(product);
+            product.category = category;
 
-            category.products.push(dbProduct);
+            await Product.create(product);
         });
-
-       category.save();
     });
 }
