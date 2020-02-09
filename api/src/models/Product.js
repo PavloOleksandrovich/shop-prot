@@ -7,4 +7,4 @@ const schema = new Schema({
     }
 });
 
-module.exports = model('category', schema);
+module.exports = model('product', schema);
