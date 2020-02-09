@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 module.exports = (config, callback) => {
     mongoose.connect(config.DATABASE.URI, {

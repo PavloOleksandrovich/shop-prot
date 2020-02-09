@@ -4,6 +4,11 @@ const schema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    category: {
+        type: Schema.Types.ObjectId, 
+        ref: 'category',
+        required: true
     }
 });
 
