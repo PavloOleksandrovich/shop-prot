@@ -9,15 +9,16 @@ module.exports = (config, callback) => {
         useUnifiedTopology: true
     })
         .then(() => {
-            console.log('Mongo connected');
+            let message = 'Mongo connected'
 
             if (!config.SETTINGS.PRODUCTION) {
-                console.log(
-                    `DB NAME: ${config.DATABASE.NAME}\n` +
-                    `DB USER: ${config.DATABASE.USERNAME}\n` +
-                    `DB PASSWORD: ${config.DATABASE.PASSWORD}`
-                );
+                message += 
+                    `.Name [${config.DATABASE.NAME}], ` +
+                    `user [${config.DATABASE.USERNAME}], ` +
+                    `password: [${config.DATABASE.PASSWORD}]`
             }
+
+            console.log(message);
             
             callback();
         })
