@@ -9,9 +9,6 @@ const CATEGORIES_QUERY = gql`
   {
     Categories {
         name
-        description
-        createdAt
-        updatedAt
     }
   }
 `;
