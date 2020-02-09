@@ -3,10 +3,10 @@ const dotenv = require('dotenv');
 const { root } = require('./helpers');
 
 const loadEnv = () => {
-    const { REACT_APP_NODE_ENV } = process.env;
+    const { NODE_ENV } = process.env;
 
-    const env =  REACT_APP_NODE_ENV
-        ? `${REACT_APP_NODE_ENV}.env`
+    const env =  NODE_ENV
+        ? `${NODE_ENV}.env`
         : '.env';
 
     dotenv.config({ path: root(env) });

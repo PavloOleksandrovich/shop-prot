@@ -5,11 +5,12 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 
+import config from './utils/config';
 import { Home, About } from './pages';
 
 // TODO uri from config
 const httpLink = createHttpLink({
-	uri: 'http://localhost:3004'
+	uri: `${config.API_HOST}:${config.API_PORT}${config.API_GRAPHQL_ENDPOINT}`
 });
 
 const client = new ApolloClient({
