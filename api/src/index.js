@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const config = require('./config');
 const { connectMongo } = require('./utils');
-const schema = require('./schemas');
+const schema = require('./schema');
 
 const server = express();
 
