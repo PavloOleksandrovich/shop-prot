@@ -1,11 +1,15 @@
 import React from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
+import ProductList from '../../../components/Product-list/Product-list';
+
 function Category() {
 	const {params: {name}} = useRouteMatch();
 
 	return (
-        <h1>{name}</h1>
+		<div className="container">
+			<ProductList />
+		</div>
 	);
 }
 

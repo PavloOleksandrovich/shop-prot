@@ -1,0 +1,40 @@
+@import "../../../style/vars";
+
+.product {
+    margin: 15px 0;
+
+    .productThumb {
+        margin-bottom: 15px;
+
+        img {
+            width: 100%;
+        } 
+    }
+
+    .productBody {
+        padding: 15px;
+        color: #30323a;
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+
+            del {
+                color: $accent-color;
+                font-size: 70%;
+                margin-left: 5px;
+            }
+        }
+
+        a {
+            color: #30323a;
+            font-size: 16px;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: none;
+                color: $accent-color;
+            }
+        }
+    }
+}
