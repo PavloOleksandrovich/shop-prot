@@ -6,7 +6,7 @@ import style from './Categories-list.module.scss';
 
 // TODO separate
 const CATEGORIES_QUERY = gql`
-  {
+  query categoriesQuery {
     Categories {
         name
     }
@@ -19,9 +19,9 @@ function CategoriesList({isOpenable, isOpened}) {
     let className = `${style.categories}`;
     
     if (isOpenable) {
-        className = isOpened 
-            ? className + ` ${style.isOpened} ${style.showOnClick} ${style.open}`
-            : className + ` ${style.isOpened} ${style.showOnClick}`;
+        className += isOpened 
+            ? ` ${style.isOpened} ${style.showOnClick} ${style.open}`
+            : ` ${style.isOpened} ${style.showOnClick}`;
     }
 
     return (

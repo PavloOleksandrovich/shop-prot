@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './Product.module.scss';
 
 // TODO from static to props
-function Product() {
-
+function Product({id, name}) {
 	return (
         <div className={style.product}>
 			<div className={style.productThumb}>
@@ -15,10 +15,16 @@ function Product() {
 					$32.50
 					<del>$45.00</del>
 				</h2>
-				<a href="#">Product Name Goes Here</a>
+				{/* TODO link to product details */}
+				<a href="#">{name}</a>
 			</div>
 		</div>
 	);
 }
+
+Product.propTypes = {
+	id: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired
+};
 
 export default Product;
