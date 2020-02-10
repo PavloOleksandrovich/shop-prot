@@ -10,7 +10,8 @@
     "setup:web": "yarn --cwd web",
     "dev": "concurrently \"yarn dev:api\" \"yarn dev:web\" --kill-others",
     "dev:api": "yarn --cwd api dev",
-    "dev:web": "yarn --cwd web start"
+    "dev:web": "yarn --cwd web start",
+    "seed": "yarn --cwd api seed"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"

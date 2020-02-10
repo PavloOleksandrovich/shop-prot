@@ -5,6 +5,14 @@ const schema = new Schema({
         type: String,
         required: true
     },
+    parent: {
+        type: Schema.Types.ObjectId, 
+        ref: 'category'
+    },
+    children: [{ 
+        type: Schema.Types.ObjectId, 
+        ref: 'category' 
+    }],
     products: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'product' 

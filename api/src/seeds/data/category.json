@@ -1,8 +1,28 @@
 {
     "Fashion": {
-        "name": "Fashion"
+        "name": "Fashion",
+        "categories": {
+            "Men's Clothing": {
+                "category": "Fashion",
+                "name": "Men's Clothing"
+            },
+            "Women's Clothing": {
+                "category": "Fashion",
+                "name": "Women's Clothing"
+            }
+        }
     },
     "Electronics": {
-        "name": "Electronics"
+        "name": "Electronics",
+        "categories": {
+            "Cell Phones": {
+                "category": "Electronics",
+                "name": "Cell Phones"
+            },
+            "Laptops": {
+                "category": "Electronics",
+                "name": "Laptops"
+            }
+        }
     }
 }
