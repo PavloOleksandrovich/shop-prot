@@ -18,6 +18,10 @@ server.use(config.API.GRAPHQL_ENDPOINT, graphqlHTTP({
 connectMongo(config, () => {
     server.listen(
         config.API.PORT,
-        () => console.log(`Server running.Port [${config.API.PORT}], env [${config.SETTINGS.ENV}]`)
+        () => console.log(
+            'Server running.' + 
+            `Port: [${config.API.PORT}], ` +
+            `env [${config.SETTINGS.ENV}]`
+        )
     );
 });

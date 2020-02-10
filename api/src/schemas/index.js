@@ -15,8 +15,8 @@ const ProductType = new GraphQLObjectType({
         name: { type: GraphQLString },
         category: {
             type: CategoryType,
-            resolve: async (parent) => {
-                return await Category.findOne({_id: parent.category});
+            resolve: async ({category}) => {
+                return await Category.findOne({_id: category});
             }
         }
     })
@@ -29,8 +29,8 @@ const CategoryType = new GraphQLObjectType({
         name: { type: GraphQLString },
         products: {
             type: new GraphQLList(ProductType),
-            resolve: async (parent) => {
-                return await Product.find({category: parent._id});
+            resolve: async ({_id}) => {
+                return await Product.find({category: _id});
             }
         }
     })
