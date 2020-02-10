@@ -30,7 +30,9 @@ function CategoriesList({isOpenable, isOpened}) {
                 <li key={name}>
                     {/* TODO link cursor: pointer only on single */}
                     <a href="/" className="d-flex justify-content-between align-items-center">
-                        {name} <i className="material-icons">keyboard_arrow_right</i>
+                        {name} 
+                        {/* TODO if category has sub category display */}
+                        {/* <i className="material-icons">keyboard_arrow_right</i> */}
                     </a> 
                 </li>
             ) )}

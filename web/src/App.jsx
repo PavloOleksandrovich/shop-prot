@@ -6,9 +6,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 
 import config from './utils/config';
-import { Home, About } from './pages';
+import { Home, About, Category } from './pages';
 
-// TODO uri from config
 const httpLink = createHttpLink({
 	uri: `${config.API_HOST}:${config.API_PORT}${config.API_GRAPHQL_ENDPOINT}`
 });
@@ -25,6 +24,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
+					<Route exact path="/category/:name" component={Category} />
 				</Switch>
 			</Router>
 		</ApolloProvider>
