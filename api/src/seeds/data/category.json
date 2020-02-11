@@ -2,23 +2,33 @@
     "Fashion": {
         "name": "Fashion"
     },
-    "Men's Clothing": {
-        "name": "Men's Clothing",
-        "parent": "Fashion"
-    },
-    "Women's Clothing": {
-        "name": "Women's Clothing",
-        "parent": "Fashion"
-    },            
+        "Men's Clothing": {
+            "name": "Men's Clothing",
+            "parent": "Fashion"
+        },
+            "Dresses": {
+                "name": "Dresses",
+                "parent": "Men's Clothing"
+            },
+
+        "Women's Clothing": {
+            "name": "Women's Clothing",
+            "parent": "Fashion"
+        },            
+            "T-Shirts": {
+                "name": "T-Shirts",
+                "parent": "Women's Clothing"
+            },
+
     "Electronics": {
         "name": "Electronics"
     },
-    "Cell Phones": {
-        "name": "Cell Phones",
-        "parent": "Electronics"
-    },
-    "Laptops": {
-        "name": "Laptops",
-        "parent": "Electronics"
-    }
+        "Cell Phones": {
+            "name": "Cell Phones",
+            "parent": "Electronics"
+        },
+        "Laptops": {
+            "name": "Laptops",
+            "parent": "Electronics"
+        }
 }
