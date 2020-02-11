@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import style from './Navigation.module.scss';
 import CategoriesList from '../../Categories-list/Categories-list';
 
 function Navigation() {
-    const [isCategoriesListOpened, setIsCategoriesListOpened] = useState(false);
+    const [isCategoriesOpened, setIsCategoriesOpened] = useState(false);
 
     return (
         <div className={style.navigation}>
@@ -12,12 +13,19 @@ function Navigation() {
                 <div className={style.categoriesWrapper}>
                     <div 
                         className={`${style.categoriesButton} d-flex justify-content-between`}
-                        onClick={() => setIsCategoriesListOpened(!isCategoriesListOpened)}
+                        onClick={() => setIsCategoriesOpened(!isCategoriesOpened)}
                     >
                         Categories <i className="material-icons">menu</i>
                     </div>
 
-                    <CategoriesList isOpenable={true} isOpened={isCategoriesListOpened} />
+                    <CSSTransition
+                        in={isCategoriesOpened}
+                        timeout={300}
+                        unmountOnExit
+                        classNames="appearance"
+                    >
+                        <CategoriesList />
+                    </CSSTransition>
                 </div>
 
                 <ul className={`${style.navbar} d-flex align-items-center mb-0`}>

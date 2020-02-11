@@ -18,8 +18,8 @@ function ProductList({products}) {
 
 ProductList.propTypes = {
 	products: PropTypes.arrayOf(PropTypes.shape({
-		id: PropTypes.string,
-		name: PropTypes.string
+		id: PropTypes.string.isRequired,
+		name: PropTypes.string.isRequired
 	}))
 };
 

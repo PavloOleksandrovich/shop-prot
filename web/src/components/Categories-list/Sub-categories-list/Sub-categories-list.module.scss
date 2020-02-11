@@ -1,0 +1,10 @@
+@import "../../../style/vars";
+
+.subCategories {
+    border-top: 1px solid #DADADA;
+    border-left: 2px solid $accent-color;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #FFF;
+}

@@ -41,3 +41,61 @@ a {
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* ===========================
+        Categories
+   =========================== */
+.categories {
+    position: absolute;
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #DADADA;
+
+    li {
+        position: relative;
+    }
+
+    > li + li {
+        border-top: 1px solid #DADADA;
+    }
+
+    a {
+        display: block;
+        padding: 15px;
+        text-transform: uppercase;
+        color: #30323A;
+        transition: .3s color;
+        font-size: 14px;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+            color: $accent-color;
+        } 
+    }
+}
+
+/* ===========================
+        Animations
+   =========================== */
+.appearance-enter {
+    opacity: 0;
+    transform: translate(0px, 15px);
+}
+
+.appearance-enter.appearance-enter-active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: .3s all;
+}
+
+.appearance-exit {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.appearance-exit.appearance-exit-active {
+    opacity: 0;
+    transform: translate(0px, 15px);
+    transition: .3s all;
+}

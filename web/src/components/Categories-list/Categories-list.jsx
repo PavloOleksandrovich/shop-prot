@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import style from './Categories-list.module.scss';
 
 import convertToTree from '../../utils/convert-to-tree';
+import Category from './Category/Category';
 
 // TODO separate
 const CATEGORIES_QUERY = gql`
@@ -19,45 +18,20 @@ const CATEGORIES_QUERY = gql`
   }
 `;
 
-function CategoriesList({isOpenable, isOpened}) {
+function CategoriesList() {
     const { data } = useQuery(CATEGORIES_QUERY);
 
-    let className = `${style.categories}`;
-    
-    if (isOpenable) {
-        className += isOpened 
-            ? ` ${style.isOpened} ${style.showOnClick} ${style.open}`
-            : ` ${style.isOpened} ${style.showOnClick}`;
-    }
-
     const categories = data 
-        ? convertToTree(data.Categories)
+        ? convertToTree(JSON.parse(JSON.stringify(data.Categories)))
         : null;
 
     return (
-        <ul className={className}>
-            {categories && categories.map( ({name}) => (
-                <li key={name}>
-                    {/* TODO link cursor: pointer only on single */}
-                    <a href="/" className="d-flex justify-content-between align-items-center">
-                        {name} 
-                        {/* TODO if category has sub category display */}
-                        {/* <i className="material-icons">keyboard_arrow_right</i> */}
-                    </a> 
-                </li>
+        <ul className="categories">
+            {categories && categories.map( (category) => (
+                <Category {...category} key={category.id} />
             ) )}
         </ul>
     );
 }
-
-CategoriesList.propTypes = {
-    static: PropTypes.bool,
-    isOpened: PropTypes.bool 
-};
-
-CategoriesList.defaultProps = {
-    isOpenable: false,
-    isOpened: false
-};
 
 export default CategoriesList;
