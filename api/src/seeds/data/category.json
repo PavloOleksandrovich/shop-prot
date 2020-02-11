@@ -1,28 +1,24 @@
 {
     "Fashion": {
-        "name": "Fashion",
-        "categories": {
-            "Men's Clothing": {
-                "category": "Fashion",
-                "name": "Men's Clothing"
-            },
-            "Women's Clothing": {
-                "category": "Fashion",
-                "name": "Women's Clothing"
-            }
-        }
+        "name": "Fashion"
     },
+    "Men's Clothing": {
+        "name": "Men's Clothing",
+        "parent": "Fashion"
+    },
+    "Women's Clothing": {
+        "name": "Women's Clothing",
+        "parent": "Fashion"
+    },            
     "Electronics": {
-        "name": "Electronics",
-        "categories": {
-            "Cell Phones": {
-                "category": "Electronics",
-                "name": "Cell Phones"
-            },
-            "Laptops": {
-                "category": "Electronics",
-                "name": "Laptops"
-            }
-        }
+        "name": "Electronics"
+    },
+    "Cell Phones": {
+        "name": "Cell Phones",
+        "parent": "Electronics"
+    },
+    "Laptops": {
+        "name": "Laptops",
+        "parent": "Electronics"
     }
 }

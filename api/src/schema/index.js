@@ -32,6 +32,28 @@ const CategoryType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
+        parent: {
+            type: CategoryType,
+            resolve: (parent) => {
+                return parent
+                    .populate('parent')
+                    .execPopulate()
+                    .then((category => {
+                        return category.parent;
+                    }));
+            }
+        },
+        children: {
+            type: new GraphQLList(CategoryType),
+            resolve: (parent) => {
+                return parent
+                    .populate('children')
+                    .execPopulate()
+                    .then((category => {
+                        return category.children;
+                    }));
+            }
+        },
         products: {
             type: new GraphQLList(ProductType),
             resolve: (parent) => {

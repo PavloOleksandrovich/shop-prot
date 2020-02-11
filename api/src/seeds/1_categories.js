@@ -1,52 +1,29 @@
 const Bluebird = require('bluebird');
 
+const { duplicate } = require('../utils');
 const { Category } = require('../models');
 const categories = require('./data/category.json');
-
-// TODO refactoring
-
-const createRelations = async (body) => {
-    if (!body.categories) {
-        return;
-    }
-
-    const category = await Category.findOne({name: body.name});
-
-    await Bluebird.each(Object.values(body.categories), async subBody => {
-        category.children.push(category);
-    });
-
-    await category.save();
-
-    return Bluebird.each(Object.values(body.categories), async subBody => {
-        createRelations(subBody);
-    });
-};
-
-const createCategory = async (body) => {
-    if (body.category) {
-        body.parent = await Category.findOne({name: body.category});
-    }
-
-    await Category.create(body);
-
-    if (!body.categories) {
-        return;
-    }
-
-    return Bluebird.each(Object.values(body.categories), async subBody => {
-        createCategory(subBody);
-    });
-};
 
 module.exports = async () => {
     await Category.deleteMany({});
 
-    await Bluebird.each(Object.values(categories), async category => {
-        createCategory(category);
+    // create categories and set parent
+    await Bluebird.mapSeries(Object.values(categories), async body => {
+        const copied = duplicate(body);
+
+        copied.parent = copied.parent
+            ? await Category.findOne({name: copied.parent}) 
+            : undefined;
+
+        await Category.create(copied);
     });
 
-    return Bluebird.each(Object.values(categories), async category => {
-        createRelations(category);
+    // set children
+    return Bluebird.each(Object.values(categories), async ({name}) => {
+        const category = await Category.findOne({name});
+        
+        category.children = await Category.find({parent: category});
+
+        category.save();
     });
 }
