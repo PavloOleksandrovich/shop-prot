@@ -6,8 +6,8 @@
             "name": "Men's Clothing",
             "parent": "Fashion"
         },
-            "Dresses": {
-                "name": "Dresses",
+            "T-Shirts": {
+                "name": "T-Shirts",
                 "parent": "Men's Clothing"
             },
 
@@ -15,8 +15,8 @@
             "name": "Women's Clothing",
             "parent": "Fashion"
         },            
-            "T-Shirts": {
-                "name": "T-Shirts",
+            "Dresses": {
+                "name": "Dresses",
                 "parent": "Women's Clothing"
             },
 

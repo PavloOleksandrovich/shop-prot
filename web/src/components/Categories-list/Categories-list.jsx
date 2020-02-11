@@ -4,11 +4,17 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import style from './Categories-list.module.scss';
 
+import convertToTree from '../../utils/convert-to-tree';
+
 // TODO separate
 const CATEGORIES_QUERY = gql`
   query categoriesQuery {
     Categories {
+        id
         name
+        parent {
+            id
+        }
     }
   }
 `;
@@ -24,9 +30,13 @@ function CategoriesList({isOpenable, isOpened}) {
             : ` ${style.isOpened} ${style.showOnClick}`;
     }
 
+    const categories = data 
+        ? convertToTree(data.Categories)
+        : null;
+
     return (
         <ul className={className}>
-            {data && data.Categories.map( ({name}) => (
+            {categories && categories.map( ({name}) => (
                 <li key={name}>
                     {/* TODO link cursor: pointer only on single */}
                     <a href="/" className="d-flex justify-content-between align-items-center">
