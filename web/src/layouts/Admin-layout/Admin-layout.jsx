@@ -21,9 +21,9 @@ const routes = [
 ];
 
 // TODO separate sidebar
-function AdminLayout() {
+function AdminLayout({children}) {
 	return (
-		<>
+        <>
             <div className={style.background}></div>
 
             <aside className={style.sidebar}>
@@ -44,7 +44,13 @@ function AdminLayout() {
                     })}
                 </ul>
             </aside>
-		</>
+
+            <main className={style.content}>
+                <div className="container-fluid">
+                    {children}
+                </div>
+            </main>
+        </>
 	);
 }
 
