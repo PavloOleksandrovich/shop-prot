@@ -7,6 +7,7 @@ import { createHttpLink } from 'apollo-link-http';
 
 import config from './utils/config';
 import { Home, About, Category } from './pages';
+import { AdminLayout } from './layouts';
 
 const httpLink = createHttpLink({
 	uri: `${config.API_HOST}:${config.API_PORT}${config.API_GRAPHQL_ENDPOINT}`
@@ -25,6 +26,7 @@ function App() {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
 					<Route exact path="/category/:name" component={Category} />
+					<Route exact path="/admin" component={AdminLayout} />
 				</Switch>
 			</Router>
 		</ApolloProvider>

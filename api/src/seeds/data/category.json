@@ -10,6 +10,16 @@
                 "name": "T-Shirts",
                 "parent": "Men's Clothing"
             },
+        
+        "Men's Shoes": {
+            "name": "Men's Shoes",
+            "parent": "Fashion"
+        },
+            "Athletic Shoes": {
+                "name": "Athletic Shoes",
+                "parent": "Men's Shoes"
+            },
+
 
         "Women's Clothing": {
             "name": "Women's Clothing",
@@ -19,6 +29,11 @@
                 "name": "Dresses",
                 "parent": "Women's Clothing"
             },
+        
+        "Women's Bags & Handbags": {
+            "name": "Women's Bags & Handbags",
+            "parent": "Fashion"
+        },
 
     "Electronics": {
         "name": "Electronics"

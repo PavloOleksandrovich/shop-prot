@@ -28,6 +28,7 @@ function Navigation() {
                     </CSSTransition>
                 </div>
 
+                {/* TODO active */}
                 <ul className={`${style.navbar} d-flex align-items-center mb-0`}>
                     <li>
                         <Link to="/">Home</Link>

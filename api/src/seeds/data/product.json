@@ -1,16 +1,20 @@
 {
-    "Fashion": [
+    "Athletic Shoes": [
         {
             "name": "Nike Air Jordan 4"
-        },
+        }
+    ],
+    "Women's Bags & Handbags": [
         {
             "name": "Louis Vuitton M44675"
         }
     ],
-    "Electronics": [
+    "Cell Phones": [
         {
             "name": "Apple iPhone X"
-        },
+        }
+    ],
+    "Laptops": [
         {
             "name": "HP 255 G7"
         }
